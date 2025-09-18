@@ -13,11 +13,9 @@ app.get('/', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
-    console.log(`Servidor en http://localhost:${PORT}`);
-});
 
-const products=[
+
+const products = [
     {
         id: 1,
         name: "producto 1",
@@ -29,7 +27,7 @@ const products=[
         price: 200
 
     },
-        {
+    {
         id: 3,
         name: "producto 3",
         price: 300
@@ -38,11 +36,14 @@ const products=[
 
 ]
 
-app.get("/products", (req,res)=>{
+app.get("/products", (req, res) => {
     res.json({
         message: "productos",
         timestamp: new Date().toDateString(),
         products: products
-
     });
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor en http://localhost:${PORT}`);
 });
