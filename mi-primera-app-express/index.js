@@ -1,6 +1,7 @@
 console.log("mi primera app enexpress.js");
 require("dotenv").config();
 const express = require('express');
+const products = require("./data/products");
 const app = express();
 const PORT = process.env.PORT;
 
@@ -15,26 +16,8 @@ app.get('/', (req, res) => {
 
 
 
-const products = [
-    {
-        id: 1,
-        name: "producto 1",
-        price: 100
-    },
-    {
-        id: 2,
-        name: "producto 2",
-        price: 200
 
-    },
-    {
-        id: 3,
-        name: "producto 3",
-        price: 300
 
-    },
-
-]
 
 app.get("/products", (req, res) => {
     res.json({
